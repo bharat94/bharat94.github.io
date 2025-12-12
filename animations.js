@@ -163,6 +163,37 @@ function applyStaggerToChildren(parentSelector, childSelector, baseDelay = 0, st
 }
 
 // ===================================
+// Mobile Navigation Menu
+// ===================================
+
+function initMobileMenu() {
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (!mobileMenuBtn || !mobileMenu) return;
+
+    // Toggle mobile menu
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking a link
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+}
+
+// ===================================
 // Initialize All Animations
 // ===================================
 
@@ -191,6 +222,7 @@ function initAnimations() {
     applyStaggerToChildren('#contact', 'a', 0, 150);
 
     // Initialize all animation systems
+    initMobileMenu();
     initScrollAnimations();
     initHeroAnimations();
     init3DTilt();
