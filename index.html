@@ -4,10 +4,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bharat Vaidhyanathan - Software Engineer</title>
+    <meta name="description" content="Bharat Vaidhyanathan — software engineer building automation tools, full-stack apps, and IoT systems.">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="canonical" href="https://bharat94.github.io/">
+    <meta property="og:title" content="Bharat Vaidhyanathan - Software Engineer">
+    <meta property="og:description" content="Software engineer building automation tools, full-stack apps, and IoT systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bharat94.github.io/">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Bharat Vaidhyanathan - Software Engineer">
+    <meta property="twitter:description" content="Software engineer building automation tools, full-stack apps, and IoT systems.">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Bharat Vaidhyanathan",
+        "jobTitle": "Software Engineer",
+        "url": "https://bharat94.github.io/",
+        "sameAs": [
+            "https://github.com/bharat94"
+        ]
+    }
+    </script>
 </head>
 <body class="bg-slate-900 text-slate-100">
+    <a href="#main" class="skip-link">Skip to content</a>
     <!-- Navigation -->
     <nav class="fixed w-full bg-slate-900/95 backdrop-blur z-50 border-b border-slate-800">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -23,7 +50,7 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-slate-100 hover:text-blue-400 transition" aria-label="Toggle menu">
+            <button id="mobile-menu-btn" class="md:hidden text-slate-100 hover:text-blue-400 transition" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
@@ -42,6 +69,7 @@
         </div>
     </nav>
 
+    <main id="main">
     <!-- Hero Section -->
     <section class="hero-gradient pt-32 pb-20 px-6">
         <!-- Geometric Shapes -->
@@ -59,7 +87,7 @@
                 <a href="#projects" class="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition btn-glow">
                     View My Work
                 </a>
-                <a href="https://github.com/bharat94" target="_blank" class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition">
+                <a href="https://github.com/bharat94" target="_blank" rel="noopener noreferrer" class="px-8 py-3 border-2 border-white/40 text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition">
                     GitHub Profile
                 </a>
             </div>
@@ -116,12 +144,87 @@
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center" data-animation="fade-in">Featured Projects</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- CleanHood -->
+                <!-- AgentHub -->
                 <div class="project-card bg-slate-800 p-8 rounded-xl" data-animation="slide-in-left">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-2xl font-bold">AgentHub</h3>
+                        <span class="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm font-semibold">AI Agents</span>
+                    </div>
+                    <p class="text-slate-300 mb-6 leading-relaxed">
+                        Self-hosted, privacy-first AI agent orchestration platform with data-isolated agents.
+                    </p>
+                    <div class="mb-6">
+                        <p class="text-sm text-slate-400 mb-2">Tech Stack:</p>
+                        <p class="text-slate-300">Python, Self-hosted</p>
+                    </div>
+                    <div class="mb-6">
+                        <p class="text-sm text-slate-400 mb-2">Highlights:</p>
+                        <p class="text-slate-300">Per-agent data isolation and sandboxed tools</p>
+                    </div>
+                    <a href="https://github.com/bharat94/AgentHub" target="_blank" rel="noopener noreferrer" class="github-link">
+                        View on GitHub
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-6l6 6m0 0l-6 6m6-6H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- openISL -->
+                <div class="project-card bg-slate-800 p-8 rounded-xl" data-animation="slide-in-right">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-2xl font-bold">openISL</h3>
+                        <span class="bg-orange-500/20 text-orange-300 px-3 py-1 rounded-full text-sm font-semibold">CLI/TUI</span>
+                    </div>
+                    <p class="text-slate-300 mb-6 leading-relaxed">
+                        Interactive smart log for Git: a Rust-based CLI/TUI tool for visualizing history and exploring commits.
+                    </p>
+                    <div class="mb-6">
+                        <p class="text-sm text-slate-400 mb-2">Tech Stack:</p>
+                        <p class="text-slate-300">Rust, Git, TUI</p>
+                    </div>
+                    <div class="mb-6">
+                        <p class="text-sm text-slate-400 mb-2">Highlights:</p>
+                        <p class="text-slate-300">Keyboard-driven navigation with commit graph visualization</p>
+                    </div>
+                    <a href="https://github.com/bharat94/openISL" target="_blank" rel="noopener noreferrer" class="github-link">
+                        View on GitHub
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-6l6 6m0 0l-6 6m6-6H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- globe.io -->
+                <div class="project-card bg-slate-800 p-8 rounded-xl" data-animation="slide-in-left">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-2xl font-bold">globe.io</h3>
+                        <span class="bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full text-sm font-semibold">3D Visualization</span>
+                    </div>
+                    <p class="text-slate-300 mb-6 leading-relaxed">
+                        Interactive 3D globe to explore cities, weather patterns, and population data around the world.
+                    </p>
+                    <div class="mb-6">
+                        <p class="text-sm text-slate-400 mb-2">Tech Stack:</p>
+                        <p class="text-slate-300">Node.js, 3D Web, Data Visualization</p>
+                    </div>
+                    <div class="mb-6">
+                        <p class="text-sm text-slate-400 mb-2">Highlights:</p>
+                        <p class="text-slate-300">City explorer, weather heatmaps, and population views</p>
+                    </div>
+                    <a href="https://github.com/bharat94/globe.io" target="_blank" rel="noopener noreferrer" class="github-link">
+                        View on GitHub
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-6l6 6m0 0l-6 6m6-6H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- CleanHood -->
+                <div class="project-card bg-slate-800 p-8 rounded-xl" data-animation="slide-in-right">
                     <div class="flex items-start justify-between mb-4">
                         <h3 class="text-2xl font-bold">CleanHood</h3>
                         <div class="flex gap-2">
-                            <span class="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm font-semibold">Environmental</span>
+                            <span class="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm font-semibold">Social Good</span>
                             <span class="bg-yellow-500/20 text-yellow-300 px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
                                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
@@ -131,56 +234,18 @@
                         </div>
                     </div>
                     <p class="text-slate-300 mb-6 leading-relaxed">
-                        Hackathon-winning community platform striding towards a cleaner neighborhood through citizen engagement and environmental awareness.
+                        Crowd-sourced platform to report neighborhood nuisances, geotag them, and organize clean-up drives.
                     </p>
                     <div class="mb-6">
                         <p class="text-sm text-slate-400 mb-2">Tech Stack:</p>
-                        <p class="text-slate-300">Web Development, Community Platform</p>
+                        <p class="text-slate-300">Android, Node.js, MongoDB, Firebase, Twilio</p>
                     </div>
-                    <a href="https://devpost.com/bharat94" target="_blank" class="github-link">
-                        View on DevPost
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-6l6 6m0 0l-6 6m6-6H3"></path>
-                        </svg>
-                    </a>
-                </div>
-
-                <!-- aircheq -->
-                <div class="project-card bg-slate-800 p-8 rounded-xl" data-animation="slide-in-right">
-                    <div class="flex items-start justify-between mb-4">
-                        <h3 class="text-2xl font-bold">aircheq</h3>
-                        <span class="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm font-semibold">IoT</span>
-                    </div>
-                    <p class="text-slate-300 mb-6 leading-relaxed">
-                        An IoT system for real-time air pollution monitoring using crowd sensing. Contributes to environmental awareness and sustainability.
-                    </p>
                     <div class="mb-6">
-                        <p class="text-sm text-slate-400 mb-2">Tech Stack:</p>
-                        <p class="text-slate-300">IoT, Sensors, Data Processing</p>
+                        <p class="text-sm text-slate-400 mb-2">Highlights:</p>
+                        <p class="text-slate-300">Winner — Best Social Good Hack & Best Use of MongoDB</p>
                     </div>
-                    <a href="https://github.com/bharat94/aircheq" target="_blank" class="github-link">
-                        View on GitHub
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-6l6 6m0 0l-6 6m6-6H3"></path>
-                        </svg>
-                    </a>
-                </div>
-
-                <!-- gather.now -->
-                <div class="project-card bg-slate-800 p-8 rounded-xl" data-animation="slide-in-left">
-                    <div class="flex items-start justify-between mb-4">
-                        <h3 class="text-2xl font-bold">gather.now</h3>
-                        <span class="bg-yellow-500/20 text-yellow-300 px-3 py-1 rounded-full text-sm font-semibold">JS/Full-Stack</span>
-                    </div>
-                    <p class="text-slate-300 mb-6 leading-relaxed">
-                        A social platform to organize and connect with friends for events and activities. Built with modern web technologies.
-                    </p>
-                    <div class="mb-6">
-                        <p class="text-sm text-slate-400 mb-2">Tech Stack:</p>
-                        <p class="text-slate-300">JavaScript, Web Development</p>
-                    </div>
-                    <a href="https://github.com/bharat94/gather.now" target="_blank" class="github-link">
-                        View on GitHub
+                    <a href="https://devpost.com/software/cleanhood" target="_blank" rel="noopener noreferrer" class="github-link">
+                        View on Devpost
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-6l6 6m0 0l-6 6m6-6H3"></path>
                         </svg>
@@ -188,11 +253,11 @@
                 </div>
 
                 <!-- AuToDo -->
-                <div class="project-card bg-slate-800 p-8 rounded-xl" data-animation="slide-in-right">
+                <div class="project-card bg-slate-800 p-8 rounded-xl" data-animation="slide-in-left">
                     <div class="flex items-start justify-between mb-4">
                         <h3 class="text-2xl font-bold">AuToDo</h3>
                         <div class="flex gap-2">
-                            <span class="bg-red-500/20 text-red-300 px-3 py-1 rounded-full text-sm font-semibold">Java</span>
+                            <span class="bg-red-500/20 text-red-300 px-3 py-1 rounded-full text-sm font-semibold">Android</span>
                             <span class="bg-yellow-500/20 text-yellow-300 px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
                                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
@@ -202,14 +267,43 @@
                         </div>
                     </div>
                     <p class="text-slate-300 mb-6 leading-relaxed">
-                        Hackathon-winning intelligent automation framework with the philosophy "Go to sleep, everything else is taken care of!" Automates repetitive tasks seamlessly.
+                        “Go to sleep, everything else is taken care of!” Automation app built for smart to-do execution.
                     </p>
                     <div class="mb-6">
                         <p class="text-sm text-slate-400 mb-2">Tech Stack:</p>
-                        <p class="text-slate-300">Java, Automation</p>
+                        <p class="text-slate-300">Android Studio, IBM Watson, Bluemix, Java</p>
                     </div>
-                    <a href="https://github.com/bharat94/AuToDo" target="_blank" class="github-link">
-                        View on GitHub
+                    <div class="mb-6">
+                        <p class="text-sm text-slate-400 mb-2">Highlights:</p>
+                        <p class="text-slate-300">Winner — Best Android App & Best Use of Bluemix</p>
+                    </div>
+                    <a href="https://devpost.com/software/autodo" target="_blank" rel="noopener noreferrer" class="github-link">
+                        View on Devpost
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-6l6 6m0 0l-6 6m6-6H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- CloverCoders -->
+                <div class="project-card bg-slate-800 p-8 rounded-xl" data-animation="slide-in-right">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-2xl font-bold">CloverCoders</h3>
+                        <span class="bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-full text-sm font-semibold">AR/VR</span>
+                    </div>
+                    <p class="text-slate-300 mb-6 leading-relaxed">
+                        Augmented reality tool to visualize 3D models in the real world before printing.
+                    </p>
+                    <div class="mb-6">
+                        <p class="text-sm text-slate-400 mb-2">Tech Stack:</p>
+                        <p class="text-slate-300">Unity, ARCore, C#, UNet</p>
+                    </div>
+                    <div class="mb-6">
+                        <p class="text-sm text-slate-400 mb-2">Highlights:</p>
+                        <p class="text-slate-300">AR visualization for pre-print validation</p>
+                    </div>
+                    <a href="https://devpost.com/software/clovercoders" target="_blank" rel="noopener noreferrer" class="github-link">
+                        View on Devpost
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-6l6 6m0 0l-6 6m6-6H3"></path>
                         </svg>
@@ -217,12 +311,13 @@
                 </div>
             </div>
             <div class="mt-12 text-center">
-                <a href="https://github.com/bharat94?tab=repositories" target="_blank" class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 transition rounded-lg font-semibold">
+                <a href="https://github.com/bharat94?tab=repositories" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 transition rounded-lg font-semibold">
                     View All Projects on GitHub
                 </a>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Achievements Section -->
     <section id="achievements" class="py-20 px-6 bg-slate-800">
@@ -247,7 +342,7 @@
                             <div class="mb-4">
                                 <span class="achievement-badge">US20230342342A1</span>
                             </div>
-                            <a href="https://patents.google.com/patent/US20230342342A1/en" target="_blank" class="achievement-link">
+                            <a href="https://patents.google.com/patent/US20230342342A1/en" target="_blank" rel="noopener noreferrer" class="achievement-link">
                                 View Patent
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
@@ -341,7 +436,7 @@
                 I'm always interested in connecting with fellow engineers and exploring new opportunities.
             </p>
             <div class="flex justify-center gap-6 mb-12 flex-wrap">
-                <a href="https://github.com/bharat94" target="_blank" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 rounded-lg font-semibold transition flex items-center gap-2" data-animation="scale-up">
+                <a href="https://github.com/bharat94" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 rounded-lg font-semibold transition flex items-center gap-2" data-animation="scale-up">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
@@ -354,7 +449,7 @@
     <!-- Footer -->
     <footer class="border-t border-slate-800 py-8 px-6">
         <div class="max-w-6xl mx-auto text-center text-slate-500 text-sm">
-            <p>© 2025 Bharat Vaidhyanathan. All rights reserved.</p>
+            <p>© 2026 Bharat Vaidhyanathan. All rights reserved.</p>
         </div>
     </footer>
 

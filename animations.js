@@ -173,22 +173,48 @@ function initMobileMenu() {
 
     if (!mobileMenuBtn || !mobileMenu) return;
 
+    const closeMenu = () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+    };
+
+    const openMenu = () => {
+        mobileMenu.classList.remove('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+    };
+
+    // Initialize aria state
+    closeMenu();
+
     // Toggle mobile menu
     mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+            openMenu();
+        } else {
+            closeMenu();
+        }
     });
 
     // Close menu when clicking a link
     mobileNavLinks.forEach(link => {
         link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
+            closeMenu();
         });
     });
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-            mobileMenu.classList.add('hidden');
+            closeMenu();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+            closeMenu();
         }
     });
 }
