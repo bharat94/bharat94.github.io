@@ -5,80 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bharat Vaidhyanathan - Software Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
-        }
-        
-        .fade-in {
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .project-card {
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
-            border-color: rgba(59, 130, 246, 0.5);
-        }
-        
-        .skill-badge {
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .skill-badge:hover {
-            background: rgba(59, 130, 246, 0.2);
-            border-color: rgba(59, 130, 246, 0.6);
-            transform: scale(1.05);
-        }
-        
-        .github-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #3b82f6;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .github-link:hover {
-            color: #1e40af;
-            transform: translateX(4px);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-slate-900 text-slate-100">
     <!-- Navigation -->
     <nav class="fixed w-full bg-slate-900/95 backdrop-blur z-50 border-b border-slate-800">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">BV</a>
+            <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent logo-glow">BV</a>
             <div class="hidden md:flex gap-8">
                 <a href="#about" class="hover:text-blue-400 transition">About</a>
                 <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
@@ -90,14 +23,19 @@
 
     <!-- Hero Section -->
     <section class="hero-gradient pt-32 pb-20 px-6">
-        <div class="max-w-6xl mx-auto text-center fade-in">
-            <h1 class="text-6xl md:text-7xl font-bold mb-6 text-white">Bharat Vaidhyanathan</h1>
-            <p class="text-xl md:text-2xl text-blue-100 mb-4">Software Engineer | Full-Stack Developer | Problem Solver</p>
-            <p class="text-lg text-blue-200 mb-12 max-w-3xl mx-auto">
+        <!-- Geometric Shapes -->
+        <div class="geometric-shape geometric-shape-1"></div>
+        <div class="geometric-shape geometric-shape-2"></div>
+        <div class="geometric-shape geometric-shape-3"></div>
+
+        <div class="max-w-6xl mx-auto text-center" style="position: relative; z-index: 1;">
+            <h1 class="text-6xl md:text-7xl font-bold mb-6 text-white typing-text">Bharat Vaidhyanathan</h1>
+            <p class="text-xl md:text-2xl text-blue-100 mb-4 hero-subtitle">Software Engineer | Full-Stack Developer | Problem Solver</p>
+            <p class="text-lg text-blue-200 mb-12 max-w-3xl mx-auto hero-description">
                 I build elegant solutions that automate workflows, solve real-world problems, and create meaningful user experiences. Passionate about open-source, IoT, and clean code.
             </p>
-            <div class="flex gap-4 justify-center flex-wrap">
-                <a href="#projects" class="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition">
+            <div class="flex gap-4 justify-center flex-wrap hero-buttons">
+                <a href="#projects" class="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition btn-glow">
                     View My Work
                 </a>
                 <a href="https://github.com/bharat94" target="_blank" class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition">
@@ -108,11 +46,11 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 px-6 bg-slate-800">
+    <section id="about" class="py-20 px-6 bg-slate-800 dot-pattern">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">About Me</h2>
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center" data-animation="fade-in">About Me</h2>
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
+                <div data-animation="slide-in-left">
                     <p class="text-lg text-slate-300 mb-6 leading-relaxed">
                         I'm a software engineer with a passion for building tools that solve real problems. From CLI utilities that streamline workflows to full-stack web applications that connect people, I love working across the entire stack.
                     </p>
@@ -123,7 +61,7 @@
                         Outside of coding, I'm an active open-source contributor and hackathon enthusiast. I enjoy tackling challenges that require creative problem-solving and technical depth.
                     </p>
                 </div>
-                <div class="bg-slate-700 p-8 rounded-xl">
+                <div class="bg-slate-700 p-8 rounded-xl" data-animation="slide-in-right">
                     <h3 class="text-2xl font-bold mb-6 text-blue-300">My Interests</h3>
                     <ul class="space-y-4 text-slate-300">
                         <li class="flex items-center gap-3">
@@ -155,10 +93,10 @@
     <!-- Projects Section -->
     <section id="projects" class="py-20 px-6 bg-slate-900">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">Featured Projects</h2>
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center" data-animation="fade-in">Featured Projects</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- terminal-todo -->
-                <div class="project-card bg-slate-800 p-8 rounded-xl">
+                <div class="project-card bg-slate-800 p-8 rounded-xl" data-animation="slide-in-left">
                     <div class="flex items-start justify-between mb-4">
                         <h3 class="text-2xl font-bold">terminal-todo</h3>
                         <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm font-semibold">Go</span>
@@ -179,7 +117,7 @@
                 </div>
 
                 <!-- aircheq -->
-                <div class="project-card bg-slate-800 p-8 rounded-xl">
+                <div class="project-card bg-slate-800 p-8 rounded-xl" data-animation="slide-in-right">
                     <div class="flex items-start justify-between mb-4">
                         <h3 class="text-2xl font-bold">aircheq</h3>
                         <span class="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm font-semibold">IoT</span>
@@ -200,7 +138,7 @@
                 </div>
 
                 <!-- gather.now -->
-                <div class="project-card bg-slate-800 p-8 rounded-xl">
+                <div class="project-card bg-slate-800 p-8 rounded-xl" data-animation="slide-in-left">
                     <div class="flex items-start justify-between mb-4">
                         <h3 class="text-2xl font-bold">gather.now</h3>
                         <span class="bg-yellow-500/20 text-yellow-300 px-3 py-1 rounded-full text-sm font-semibold">JS/Full-Stack</span>
@@ -221,7 +159,7 @@
                 </div>
 
                 <!-- AuToDo -->
-                <div class="project-card bg-slate-800 p-8 rounded-xl">
+                <div class="project-card bg-slate-800 p-8 rounded-xl" data-animation="slide-in-right">
                     <div class="flex items-start justify-between mb-4">
                         <h3 class="text-2xl font-bold">AuToDo</h3>
                         <span class="bg-red-500/20 text-red-300 px-3 py-1 rounded-full text-sm font-semibold">Java</span>
@@ -250,44 +188,44 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 px-6 bg-slate-800">
+    <section id="skills" class="py-20 px-6 bg-slate-800 dot-pattern">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">Skills & Technologies</h2>
-            
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center" data-animation="fade-in">Skills & Technologies</h2>
+
             <div class="grid md:grid-cols-3 gap-12">
                 <div>
-                    <h3 class="text-2xl font-bold mb-6 text-blue-300">Languages</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-300" data-animation="fade-in">Languages</h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="skill-badge px-4 py-2 rounded-lg">JavaScript</span>
-                        <span class="skill-badge px-4 py-2 rounded-lg">Go</span>
-                        <span class="skill-badge px-4 py-2 rounded-lg">Python</span>
-                        <span class="skill-badge px-4 py-2 rounded-lg">Java</span>
-                        <span class="skill-badge px-4 py-2 rounded-lg">Dart</span>
-                        <span class="skill-badge px-4 py-2 rounded-lg">SQL</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">JavaScript</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">Go</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">Python</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">Java</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">Dart</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">SQL</span>
                     </div>
                 </div>
 
                 <div>
-                    <h3 class="text-2xl font-bold mb-6 text-blue-300">Frameworks & Tools</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-300" data-animation="fade-in">Frameworks & Tools</h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="skill-badge px-4 py-2 rounded-lg">React</span>
-                        <span class="skill-badge px-4 py-2 rounded-lg">Node.js</span>
-                        <span class="skill-badge px-4 py-2 rounded-lg">Flutter</span>
-                        <span class="skill-badge px-4 py-2 rounded-lg">Git</span>
-                        <span class="skill-badge px-4 py-2 rounded-lg">Docker</span>
-                        <span class="skill-badge px-4 py-2 rounded-lg">REST APIs</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">React</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">Node.js</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">Flutter</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">Git</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">Docker</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">REST APIs</span>
                     </div>
                 </div>
 
                 <div>
-                    <h3 class="text-2xl font-bold mb-6 text-blue-300">Specializations</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-300" data-animation="fade-in">Specializations</h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="skill-badge px-4 py-2 rounded-lg">Full-Stack Dev</span>
-                        <span class="skill-badge px-4 py-2 rounded-lg">CLI Tools</span>
-                        <span class="skill-badge px-4 py-2 rounded-lg">IoT Systems</span>
-                        <span class="skill-badge px-4 py-2 rounded-lg">Data Science</span>
-                        <span class="skill-badge px-4 py-2 rounded-lg">Automation</span>
-                        <span class="skill-badge px-4 py-2 rounded-lg">Mobile Dev</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">Full-Stack Dev</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">CLI Tools</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">IoT Systems</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">Data Science</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">Automation</span>
+                        <span class="skill-badge px-4 py-2 rounded-lg" data-animation="scale-up">Mobile Dev</span>
                     </div>
                 </div>
             </div>
@@ -297,12 +235,12 @@
     <!-- Contact/Footer Section -->
     <section id="contact" class="py-20 px-6 bg-slate-900">
         <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-8">Let's Build Something Great</h2>
-            <p class="text-xl text-slate-400 mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8" data-animation="scale-up">Let's Build Something Great</h2>
+            <p class="text-xl text-slate-400 mb-12" data-animation="fade-in" data-delay="200">
                 I'm always interested in connecting with fellow engineers and exploring new opportunities.
             </p>
             <div class="flex justify-center gap-6 mb-12 flex-wrap">
-                <a href="https://github.com/bharat94" target="_blank" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 rounded-lg font-semibold transition flex items-center gap-2">
+                <a href="https://github.com/bharat94" target="_blank" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 rounded-lg font-semibold transition flex items-center gap-2" data-animation="scale-up">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
@@ -318,5 +256,8 @@
             <p>© 2025 Bharat Vaidhyanathan. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Animation Script -->
+    <script src="animations.js"></script>
 </body>
 </html>
