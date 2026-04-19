@@ -504,10 +504,22 @@ footer {
     align-items: flex-start;
   }
   .hero h1 {
-    font-size: 58px;
-    white-space: normal;
-    word-break: break-word;
+    font-size: 64px;
+    white-space: nowrap;
   }
+  .hero h1 br { display: none; }
+  .hero h1 em { 
+    visibility: hidden; 
+    position: relative;
+    padding-left: 4px;
+  }
+  .hero h1 em::before { 
+    content: 'V^'; 
+    visibility: visible;
+    position: absolute;
+    left: 0;
+  }
+  
   .hero-card {
     transform: none;
     padding: 24px;
