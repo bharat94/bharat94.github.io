@@ -30,12 +30,17 @@
   padding: 0; 
   -webkit-tap-highlight-color: transparent; 
 }
-html, body { background: var(--cream); color: var(--ink); }
+html, body { 
+  background: var(--cream); 
+  color: var(--ink); 
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
 body {
   font-family: 'Instrument Serif', Georgia, serif;
   font-size: 19px;
   line-height: 1.55;
-  overflow-x: hidden;
   min-height: 100vh;
   background-image:
     radial-gradient(rgba(120,90,60,0.07) 1px, transparent 1px),
@@ -253,7 +258,7 @@ section { padding: 120px 48px; max-width: 1400px; margin: 0 auto; position: rela
 .margin-note::before {
   content: ''; position: absolute; left: 0; top: 50%;
   width: 32px; height: 32px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 16 Q 10 6 20 14 T 30 16 M 26 12 L 30 16 L 26 20' fill='none' stroke='%23b9502b' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 16 Q 10 6 20 14 T 30 16 M 26 12 L 30 16 L 26 20' fill='none' stroke='%234a6e8c' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
   transform: translateY(-50%);
 }
 
@@ -506,12 +511,17 @@ footer {
   .hero h1 {
     font-size: 64px;
     white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
   }
   .hero h1 br { display: none; }
   .hero h1 em { 
     visibility: hidden; 
     position: relative;
     padding-left: 4px;
+    display: inline-block;
+    width: 2ch;
   }
   .hero h1 em::before { 
     content: 'V'; 
