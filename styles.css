@@ -161,9 +161,7 @@ nav .links a:hover { color: var(--rust); }
 .hero h1 {
   font-size: clamp(52px, 7.2vw, 116px);
   line-height: 0.9; font-weight: 400; letter-spacing: -0.03em;
-  white-space: nowrap;
 }
-.hero h1 em { white-space: nowrap; }
 .hero h1 em {
   font-style: italic; color: var(--rust);
   position: relative; display: inline-block;
@@ -466,13 +464,59 @@ footer {
 }
 .tw-row input[type="range"] { width: 160px; accent-color: var(--rust); }
 
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.mobile-menu-btn {
+  display: none;
+  background: transparent; border: 1px solid var(--rule);
+  color: var(--ink); font-size: 20px; padding: 4px 10px;
+  cursor: pointer; border-radius: 6px;
+}
+
+.mobile-menu {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--cream); z-index: 10000;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 32px; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s;
+}
+.mobile-menu.active { opacity: 1; pointer-events: all; }
+.mobile-menu a {
+  font-family: 'Instrument Serif', serif; font-size: 42px;
+  color: var(--ink); text-decoration: none;
+}
+
 @media (max-width: 900px) {
   nav { padding: calc(12px + var(--safe-top)) 24px 12px; }
-  nav .links { gap: 16px; font-size: 10px; }
+  nav .links { display: none; }
+  nav .brand { font-size: 22px; }
+  .mobile-menu-btn { display: block; }
+  
   section { padding: 80px 24px; }
   .projects-header { padding: 0 24px; }
   .carousel { padding: 20px 24px 40px; }
-  .hero { grid-template-columns: 1fr; padding: 120px 24px 60px; }
+  
+  .hero { 
+    grid-template-columns: 1fr; 
+    padding: calc(100px + var(--safe-top)) 24px 60px; 
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero h1 {
+    font-size: 58px;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .hero-card {
+    transform: none;
+    padding: 24px;
+    width: 100%;
+  }
+  .hero-card::before { width: 60px; top: -10px; }
+  .hero-card p { font-size: 17px; }
+  .hero-card .hand { font-size: 22px; }
+  
   .about { grid-template-columns: 1fr; }
   .about-sidebar { position: static; }
   .achievements { grid-template-columns: 1fr; }

@@ -139,8 +139,19 @@
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
   </div>
-  <button class="theme-toggle" onclick="toggleTheme()">◐ theme</button>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()">◐ theme</button>
+    <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Menu">☰</button>
+  </div>
 </nav>
+
+<div id="mobile-menu" class="mobile-menu">
+  <a href="#about" onclick="toggleMobileMenu()">About</a>
+  <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
+  <a href="#achievements" onclick="toggleMobileMenu()">Achievements</a>
+  <a href="#skills" onclick="toggleMobileMenu()">Skills</a>
+  <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+</div>
 
 <!-- HERO -->
 <header class="hero">

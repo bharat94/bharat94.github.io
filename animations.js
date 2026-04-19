@@ -48,6 +48,19 @@ if (brand) {
   });
 }
 
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const btn = document.getElementById('mobile-menu-btn');
+  const isActive = menu.classList.toggle('active');
+  btn.textContent = isActive ? '✕' : '☰';
+  document.body.style.overflow = isActive ? 'hidden' : '';
+}
+
+const menuBtn = document.getElementById('mobile-menu-btn');
+if (menuBtn) {
+  menuBtn.addEventListener('click', toggleMobileMenu);
+}
+
 // --- theme toggle ---
 function toggleTheme() {
   const t = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
