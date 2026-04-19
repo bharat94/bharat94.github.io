@@ -250,16 +250,32 @@ if (carousel) {
     carousel.style.scrollSnapType = 'none';
     carousel.style.cursor = 'grabbing';
   });
+  
+  // Touch support
+  carousel.addEventListener('touchstart', (e) => {
+    isDown = true;
+    startX = e.touches[0].pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+    carousel.style.scrollSnapType = 'none';
+  }, { passive: true });
+
   carousel.addEventListener('mouseleave', () => {
     isDown = false;
     carousel.style.cursor = '';
     carousel.style.scrollSnapType = 'x mandatory';
   });
+
   carousel.addEventListener('mouseup', () => {
     isDown = false;
     carousel.style.cursor = '';
     carousel.style.scrollSnapType = 'x mandatory';
   });
+
+  carousel.addEventListener('touchend', () => {
+    isDown = false;
+    carousel.style.scrollSnapType = 'x mandatory';
+  });
+
   carousel.addEventListener('mousemove', (e) => {
     if (!isDown) return;
     e.preventDefault();
@@ -267,6 +283,13 @@ if (carousel) {
     const walk = (x - startX) * 2;
     carousel.scrollLeft = scrollLeft - walk;
   });
+
+  carousel.addEventListener('touchmove', (e) => {
+    if (!isDown) return;
+    const x = e.touches[0].pageX - carousel.offsetLeft;
+    const walk = (x - startX) * 2;
+    carousel.scrollLeft = scrollLeft - walk;
+  }, { passive: true });
 }
 
 // ==== TWEAKS ====
