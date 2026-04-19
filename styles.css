@@ -514,7 +514,7 @@ footer {
     padding-left: 4px;
   }
   .hero h1 em::before { 
-    content: 'V^'; 
+    content: 'V'; 
     visibility: visible;
     position: absolute;
     left: 0;
