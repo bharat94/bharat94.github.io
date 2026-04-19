@@ -82,12 +82,12 @@ document.querySelectorAll('a, button, .project-card').forEach(el => {
 
 // --- projects ---
 const projects = [
-  { name: 'CleanHood', cat: 'Social Good', win: 'Winner', desc: 'Crowd-sourced platform to report neighborhood nuisances, geotag them, and organize clean-up drives.', stack: 'Android · Node · Mongo · Firebase · Twilio', url: 'https://devpost.com/software/cleanhood', viz: 'map' },
-  { name: 'AuToDo', cat: 'Android', win: 'Winner', desc: '"Go to sleep, everything else is taken care of!" An automation app for smart to-do execution.', stack: 'Android · IBM Watson · Bluemix · Java', url: 'https://devpost.com/software/autodo', viz: 'waves' },
-  { name: 'AgentHub', cat: 'AI Agents', desc: 'Self-hosted, privacy-first AI agent orchestration platform with per-agent data isolation and sandboxed tools.', stack: 'Python · Self-hosted', url: 'https://github.com/bharat94/AgentHub', viz: 'agent' },
-  { name: 'openISL', cat: 'CLI / TUI', desc: 'Interactive smart log for Git — a Rust-based CLI/TUI for visualizing history and exploring commits.', stack: 'Rust · Git · TUI', url: 'https://github.com/bharat94/openISL', viz: 'log' },
-  { name: 'globe.io', cat: '3D Visualization', desc: 'Interactive 3D globe to explore cities, weather patterns, and population data around the world.', stack: 'Node.js · 3D Web · Data Viz', url: 'https://github.com/bharat94/globe.io', viz: 'globe' },
-  { name: 'CloverCoders', cat: 'AR / VR', desc: 'Augmented reality tool to visualize 3D models in the real world before printing.', stack: 'Unity · ARCore · C# · UNet', url: 'https://devpost.com/software/clovercoders', viz: 'ar' },
+  { name: 'CleanHood', cat: 'Social Good', win: 'Winner', desc: 'Crowd-sourced platform for neighborhood reporting and clean-up drives.', stack: 'Android · Node · Mongo · Firebase', url: 'https://devpost.com/software/cleanhood', viz: 'map' },
+  { name: 'AuToDo', cat: 'Android', win: 'Winner', desc: 'Smart automation app for intelligent to-do execution and workflow.', stack: 'Android · IBM Watson · Java', url: 'https://devpost.com/software/autodo', viz: 'waves' },
+  { name: 'AgentHub', cat: 'AI Agents', desc: 'Privacy-first AI agent orchestration platform with per-agent data isolation.', stack: 'Python · Self-hosted', url: 'https://github.com/bharat94/AgentHub', viz: 'agent' },
+  { name: 'openISL', cat: 'CLI / TUI', desc: 'Interactive smart log for Git — a Rust-based CLI for history visualization.', stack: 'Rust · Git · TUI', url: 'https://github.com/bharat94/openISL', viz: 'log' },
+  { name: 'globe.io', cat: '3D Visualization', desc: 'Interactive 3D globe for exploring cities, weather, and population data.', stack: 'Node.js · 3D Web · Data Viz', url: 'https://github.com/bharat94/globe.io', viz: 'globe' },
+  { name: 'CloverCoders', cat: 'AR / VR', desc: 'AR tool to visualize 3D models in the real world before printing.', stack: 'Unity · ARCore · C#', url: 'https://devpost.com/software/clovercoders', viz: 'ar' },
 ];
 
 // abstract SVG identifiers per project — no literal branding, just form
