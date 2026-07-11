@@ -447,6 +447,8 @@ const TWEAK_DEFAULTS = {
 };
 
 let tweaks = { ...TWEAK_DEFAULTS };
+// honor the visitor's saved theme across pages
+try { const t = localStorage.getItem('fj-theme'); if (t) tweaks.theme = t; } catch {}
 
 function mixDeeper(hex) {
   // darken a hex ~8% toward black for the "deep" variant

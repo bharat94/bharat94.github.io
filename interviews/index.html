@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interviews — Bharat Vaidhyanathan</title>
+    <meta name="description" content="Interviews with Bharat Vaidhyanathan, conducted by an AI — thoughts on software, tools, and building things, on the record.">
+    <meta name="theme-color" content="#f1e8d6">
+    <link rel="canonical" href="https://bharat94.github.io/interviews/">
+    <meta property="og:title" content="The Interviews — Bharat Vaidhyanathan">
+    <meta property="og:description" content="Conversations with an AI interviewer — thoughts on software, tools, and building things, on the record.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bharat94.github.io/interviews/">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Caveat:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-theme="dark">
+<div class="cursor"></div>
+
+<nav>
+  <div class="brand">Bharat.</div>
+  <div class="links">
+    <a href="/#about">About</a>
+    <a href="/#projects">Projects</a>
+    <a href="/#achievements">Achievements</a>
+    <a href="/interviews/" style="color:var(--rust);">Interviews</a>
+    <a href="/#contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()">◐ theme</button>
+    <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<div id="mobile-menu" class="mobile-menu">
+  <a href="/#about" onclick="toggleMobileMenu()">About</a>
+  <a href="/#projects" onclick="toggleMobileMenu()">Projects</a>
+  <a href="/#achievements" onclick="toggleMobileMenu()">Achievements</a>
+  <a href="/interviews/" onclick="toggleMobileMenu()">Interviews</a>
+  <a href="/#contact" onclick="toggleMobileMenu()">Contact</a>
+</div>
+
+<section class="iv-wrap">
+  <div class="section-label">§ 05 — Interviews</div>
+  <h1 class="section-title reveal">On the <em>record.</em></h1>
+  <p class="iv-blurb reveal">
+    Every so often, an AI sits me down and asks questions — one at a time, no
+    softballs. These are the transcripts, lightly edited, entirely mine.
+  </p>
+  <div class="scribble reveal" style="margin:0 0 44px;">asked by a machine, answered by me.</div>
+
+  <div id="iv-list" class="iv-list" aria-live="polite"></div>
+</section>
+
+<footer>
+  <div>© 2026 Bharat Vaidhyanathan</div>
+  <div>Field Journal · Interviews</div>
+</footer>
+
+<script src="/animations.js"></script>
+<script>
+(function () {
+  const list = document.getElementById('iv-list');
+  fetch('/interviews/interviews.json')
+    .then(r => r.json())
+    .then(data => {
+      const items = (data.interviews || []);
+      if (!items.length) {
+        list.innerHTML = `
+          <div class="iv-empty">
+            <div class="mono" style="margin-bottom:12px;">No entries yet</div>
+            <div class="hand" style="font-size:26px;">nothing on the record yet — the first sitting is being scheduled.</div>
+          </div>`;
+        return;
+      }
+      list.innerHTML = items.map(iv => `
+        <a class="iv-row" href="/interviews/${iv.slug}.html">
+          <span class="iv-num">№ ${String(iv.num).padStart(2, '0')}</span>
+          <span class="iv-main">
+            <span class="iv-title">${iv.title}</span>
+            <span class="iv-pullquote">“${iv.pull}”</span>
+          </span>
+          <span class="iv-leader" aria-hidden="true"></span>
+          <span class="iv-meta">
+            <span>${iv.topic}</span>
+            <span>${iv.dateHuman} · ${iv.minutes} min</span>
+          </span>
+        </a>`).join('');
+      // observe the injected rows for reveal
+      if (window.IntersectionObserver) {
+        const io = new IntersectionObserver(es => es.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        }), { threshold: 0.1 });
+        list.querySelectorAll('.iv-row').forEach(el => { el.classList.add('reveal'); io.observe(el); });
+      }
+    })
+    .catch(() => {
+      list.innerHTML = '<div class="iv-empty mono">Could not load the index — try a refresh.</div>';
+    });
+})();
+</script>
+</body>
+</html>

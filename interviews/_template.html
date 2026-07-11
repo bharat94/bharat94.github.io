@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} — Interview · Bharat Vaidhyanathan</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="theme-color" content="#f1e8d6">
+    <link rel="canonical" href="https://bharat94.github.io/interviews/{{SLUG}}.html">
+    <meta property="og:title" content="{{TITLE}} — an interview with Bharat Vaidhyanathan">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bharat94.github.io/interviews/{{SLUG}}.html">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Caveat:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{TITLE}} — an interview with Bharat Vaidhyanathan",
+        "datePublished": "{{DATE_ISO}}",
+        "author": { "@type": "Person", "name": "Bharat Vaidhyanathan", "url": "https://bharat94.github.io/" }
+    }
+    </script>
+</head>
+<body data-theme="dark">
+<div class="cursor"></div>
+
+<nav>
+  <div class="brand">Bharat.</div>
+  <div class="links">
+    <a href="/#about">About</a>
+    <a href="/#projects">Projects</a>
+    <a href="/#achievements">Achievements</a>
+    <a href="/interviews/" style="color:var(--rust);">Interviews</a>
+    <a href="/#contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()">◐ theme</button>
+    <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<div id="mobile-menu" class="mobile-menu">
+  <a href="/#about" onclick="toggleMobileMenu()">About</a>
+  <a href="/#projects" onclick="toggleMobileMenu()">Projects</a>
+  <a href="/#achievements" onclick="toggleMobileMenu()">Achievements</a>
+  <a href="/interviews/" onclick="toggleMobileMenu()">Interviews</a>
+  <a href="/#contact" onclick="toggleMobileMenu()">Contact</a>
+</div>
+
+<article class="iv-article">
+  <div class="iv-crumb"><a href="/interviews/">← the interviews</a></div>
+
+  <div class="iv-dateline mono">Entry № {{NUM}} · Recorded {{DATE_HUMAN}} · {{QUESTIONS}} questions · {{MINUTES}} min read</div>
+  <h1 class="iv-h1 reveal">{{TITLE}}</h1>
+  <div class="iv-topic mono">{{TOPIC}}</div>
+
+  <p class="iv-intro reveal">{{INTRO}}</p>
+
+  <div class="iv-rule" aria-hidden="true"></div>
+
+  {{TRANSCRIPT}}
+
+  <div class="iv-sign hand reveal">— as told to the field journal's resident machine.</div>
+
+  <div class="iv-crumb" style="margin-top:56px;"><a href="/interviews/">← back to the record</a></div>
+</article>
+
+<footer>
+  <div>© 2026 Bharat Vaidhyanathan</div>
+  <div>Field Journal · Interviews · № {{NUM}}</div>
+</footer>
+
+<script src="/animations.js"></script>
+</body>
+</html>
