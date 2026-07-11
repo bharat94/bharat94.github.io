@@ -293,6 +293,83 @@ if (carousel) {
   `).join('');
 }
 
+// --- ink draw: card sketches draw themselves in ---
+const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function prepInk(svg) {
+  const strokes = [], fades = [];
+  svg.querySelectorAll('path, line, circle, ellipse, rect, polyline, polygon, text').forEach(el => {
+    if (el.tagName === 'rect' && el.getAttribute('width') === '400') return; // paper background
+    const cs = getComputedStyle(el);
+    const dashed = el.hasAttribute('stroke-dasharray') || (el.parentElement && el.parentElement.hasAttribute('stroke-dasharray'));
+    if (cs.stroke !== 'none' && !dashed && el.getTotalLength) {
+      let len = 0;
+      try { len = el.getTotalLength(); } catch {}
+      if (len > 0) { strokes.push({ el, len, fill: cs.fill !== 'none' }); return; }
+    }
+    fades.push(el);
+  });
+  return { strokes, fades };
+}
+
+function inkReset(parts) {
+  parts.strokes.forEach(({ el, len, fill }) => {
+    el.style.transition = 'none';
+    el.style.strokeDasharray = len;
+    el.style.strokeDashoffset = len;
+    if (fill) el.style.fillOpacity = '0';
+  });
+  parts.fades.forEach(el => { el.style.transition = 'none'; el.style.opacity = '0'; });
+}
+
+function inkDraw(parts) {
+  const per = 110, dur = 900;
+  const fadeStart = Math.min(parts.strokes.length * per, 1300) + 350;
+  parts.strokes.forEach(({ el, fill }, i) => {
+    const d = Math.min(i * per, 1300);
+    el.style.transition = `stroke-dashoffset ${dur}ms cubic-bezier(.4,0,.2,1) ${d}ms`
+      + (fill ? `, fill-opacity 500ms ease ${d + dur * 0.7}ms` : '');
+    el.style.strokeDashoffset = '0';
+    if (fill) el.style.fillOpacity = '1';
+  });
+  parts.fades.forEach((el, i) => {
+    el.style.transition = `opacity 600ms ease ${fadeStart + i * 70}ms`;
+    el.style.opacity = '1';
+  });
+}
+
+if (carousel && !REDUCED_MOTION) {
+  const pending = new Map();
+  const vizIO = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const parts = pending.get(en.target);
+      if (parts) requestAnimationFrame(() => inkDraw(parts));
+      pending.delete(en.target);
+      vizIO.unobserve(en.target);
+    });
+  }, { threshold: 0.35 });
+
+  carousel.querySelectorAll('.project-card').forEach(card => {
+    const svg = card.querySelector('.project-viz svg');
+    if (!svg) return;
+    const parts = prepInk(svg);
+    inkReset(parts);
+    pending.set(svg, parts);
+    vizIO.observe(svg);
+
+    let lastReplay = 0;
+    card.addEventListener('mouseenter', () => {
+      const now = Date.now();
+      if (pending.has(svg) || now - lastReplay < 3000) return;
+      lastReplay = now;
+      inkReset(parts);
+      void svg.getBoundingClientRect();
+      requestAnimationFrame(() => inkDraw(parts));
+    });
+  });
+}
+
 function scrollCarousel(dir) {
   if (carousel) {
     carousel.scrollBy({ left: dir * 472, behavior: 'smooth' });

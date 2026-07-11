@@ -15,7 +15,8 @@
     <meta property="twitter:title" content="Bharat Vaidhyanathan — Field Journal">
     <meta property="twitter:description" content="Software engineer building automation tools, full-stack apps, and IoT systems.">
     
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -155,12 +156,31 @@
 
 <!-- HERO -->
 <header class="hero">
-  <div>
+  <div class="hero-left">
     <div class="hero-meta">Field Notes · Vol. 01 · Est. 2026</div>
     <h1>
       Bharat<br/>
       <em>Vaidhyanathan</em>
     </h1>
+    <svg class="postmark" viewBox="0 0 240 132" aria-hidden="true">
+      <defs>
+        <path id="pm-arc" d="M178 25 a41 41 0 1 1 -0.1 0"/>
+      </defs>
+      <g fill="none" stroke="currentColor">
+        <circle cx="178" cy="66" r="48" stroke-width="1.6"/>
+        <circle cx="178" cy="66" r="33" stroke-width="1" stroke-dasharray="2 3"/>
+        <path d="M6 46 Q 40 38 74 46 T 130 48" stroke-width="1.4"/>
+        <path d="M6 66 Q 40 58 74 66 T 128 68" stroke-width="1.4"/>
+        <path d="M6 86 Q 40 78 74 86 T 130 88" stroke-width="1.4"/>
+      </g>
+      <text font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="2" fill="currentColor" text-anchor="middle">
+        <tspan x="178" y="63">POSTED</tspan>
+        <tspan x="178" y="78">JUL·2026</tspan>
+      </text>
+      <text font-family="'JetBrains Mono', monospace" font-size="8" letter-spacing="1.5" fill="currentColor">
+        <textPath href="#pm-arc" startOffset="2">FIELD JOURNAL · FIRST CLASS</textPath>
+      </text>
+    </svg>
   </div>
   <div class="hero-right">
     <div class="hero-card">
@@ -175,6 +195,15 @@
   </div>
   <div class="scroll-hint">scroll, gently</div>
 </header>
+
+<!-- NOW -->
+<section id="now" class="now-entry">
+  <div class="now-stamp reveal">Now</div>
+  <div class="now-body reveal">
+    <div class="mono" style="margin-bottom:10px;">Entry · July 2026</div>
+    <p>Currently building <a href="https://matchday-zeta-ten.vercel.app" target="_blank">MatchDay</a> while the World Cup runs — score predictions, friendly bets, and a live leaderboard. <span class="hand" style="font-size:24px;">the group chat is ruthless.</span></p>
+  </div>
+</section>
 
 <!-- ABOUT -->
 <section id="about">
@@ -207,6 +236,7 @@
     <p style="font-size:20px; max-width:620px; color:var(--ink-soft); margin-bottom:20px;" class="reveal">
       Eight I'm fond of. Each has its own reason for existing.
     </p>
+    <div class="scribble reveal" style="margin:0 0 6px 118px;">no. 1 on this shelf is live — go poke it ↓</div>
   </div>
   <div class="carousel-nav">
     <button onclick="scrollCarousel(-1)" aria-label="Previous">←</button>
@@ -221,6 +251,7 @@
 <section id="achievements">
   <div class="section-label">§ 03 — Achievements</div>
   <h2 class="section-title reveal">Worth <em>framing.</em></h2>
+  <div class="scribble reveal" style="margin:-28px 0 36px;">the seal spins. try not to stare.</div>
   <div class="achievements">
     <div class="patent-card reveal">
       <div class="patent-seal">US<br/>PATENT<br/>· 2023 ·</div>
@@ -243,6 +274,7 @@
 <section id="skills">
   <div class="section-label">§ 04 — Inventory</div>
   <h2 class="section-title reveal">What's in the <em>toolbox.</em></h2>
+  <div class="scribble reveal" style="margin:-28px 0 36px;">a drawer I keep rearranging —</div>
   <div class="skills-grid">
     <div class="skill-group reveal">
       <h4>Languages</h4>
@@ -269,7 +301,14 @@
 <section id="contact" class="contact">
   <h2 class="reveal">Let's build <em>something</em> together.</h2>
   <div class="signoff reveal">— always open to a good problem.</div>
+  <div class="signature reveal">
+    <span class="sig-name">Bharat</span>
+    <svg class="sig-flourish" viewBox="0 0 220 26" aria-hidden="true">
+      <path d="M6 16 C 50 4, 92 24, 128 13 S 196 8, 214 15" fill="none" stroke="var(--rust)" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
   <a href="https://github.com/bharat94" class="contact-btn" target="_blank">Find me on GitHub</a>
+  <div class="wax-seal" aria-hidden="true"><span>BV</span></div>
 </section>
 
 <footer>
