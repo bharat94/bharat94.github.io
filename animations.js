@@ -95,16 +95,66 @@ document.querySelectorAll('a, button, .project-card').forEach(el => {
 
 // --- projects ---
 const projects = [
+  { name: 'MatchDay', cat: 'Full-Stack · Live', win: 'Live', desc: 'World Cup prediction game for friends — live scores, a betting board, and a leaderboard that reshuffles at every final whistle.', stack: 'Next.js · TypeScript · Prisma · Postgres', url: 'https://matchday-zeta-ten.vercel.app', viz: 'pitch' },
   { name: 'CleanHood', cat: 'Social Good', win: 'Winner', desc: 'Crowd-sourced platform for neighborhood reporting and clean-up drives.', stack: 'Android · Node · Mongo · Firebase', url: 'https://devpost.com/software/cleanhood', viz: 'map' },
   { name: 'AuToDo', cat: 'Android', win: 'Winner', desc: 'Smart automation app for intelligent to-do execution and workflow.', stack: 'Android · IBM Watson · Java', url: 'https://devpost.com/software/autodo', viz: 'waves' },
   { name: 'AgentHub', cat: 'AI Agents', desc: 'Privacy-first AI agent orchestration platform with per-agent data isolation.', stack: 'Python · Self-hosted', url: 'https://github.com/bharat94/AgentHub', viz: 'agent' },
   { name: 'openISL', cat: 'CLI / TUI', desc: 'Interactive smart log for Git — a Rust-based CLI for history visualization.', stack: 'Rust · Git · TUI', url: 'https://github.com/bharat94/openISL', viz: 'log' },
+  { name: 'terminal-todo', cat: 'CLI · AI Agents', desc: 'A shared task queue for you and your AI agents — dependencies, claiming, and "what\'s next" straight from the terminal.', stack: 'Go · CLI', url: 'https://github.com/bharat94/terminal-todo', viz: 'todo' },
   { name: 'globe.io', cat: '3D Visualization', desc: 'Interactive 3D globe for exploring cities, weather, and population data.', stack: 'Node.js · 3D Web · Data Viz', url: 'https://github.com/bharat94/globe.io', viz: 'globe' },
   { name: 'CloverCoders', cat: 'AR / VR', desc: 'AR tool to visualize 3D models in the real world before printing.', stack: 'Unity · ARCore · C#', url: 'https://devpost.com/software/clovercoders', viz: 'ar' },
 ];
 
 // abstract SVG identifiers per project — no literal branding, just form
 const vizMap = {
+  pitch: `<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <rect width="400" height="280" fill="var(--cream)"/>
+    <g fill="none" stroke="var(--ink)" stroke-width="1.2" opacity="0.6">
+      <rect x="50" y="50" width="300" height="180" rx="4"/>
+      <line x1="200" y1="50" x2="200" y2="230"/>
+      <circle cx="200" cy="140" r="30"/>
+      <rect x="50" y="100" width="40" height="80"/>
+      <rect x="310" y="100" width="40" height="80"/>
+    </g>
+    <g fill="none" stroke="var(--rust)" stroke-width="1.5" stroke-dasharray="4 4">
+      <path d="M90 190 Q 180 60, 320 130"/>
+    </g>
+    <circle cx="320" cy="130" r="7" fill="var(--rust)"/>
+    <g fill="var(--sage)">
+      <circle cx="120" cy="120" r="5"/><circle cx="160" cy="180" r="5"/>
+      <circle cx="250" cy="100" r="5"/><circle cx="280" cy="170" r="5"/>
+    </g>
+    <g font-family="JetBrains Mono, monospace" font-size="10" fill="var(--ink-soft)">
+      <text x="60" y="36">FT 2–1 · exact score</text>
+      <text x="270" y="36" fill="var(--rust)">+15 pts</text>
+      <text x="60" y="246">leaderboard: ↑ 3 places</text>
+    </g>
+  </svg>`,
+  todo: `<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <rect width="400" height="280" fill="var(--cream)"/>
+    <g fill="none" stroke="var(--ink)" stroke-width="1.2" opacity="0.6">
+      <rect x="40" y="40" width="320" height="200" rx="8"/>
+      <line x1="40" y1="68" x2="360" y2="68"/>
+    </g>
+    <g fill="var(--rust)" opacity="0.8">
+      <circle cx="58" cy="54" r="4"/><circle cx="74" cy="54" r="4"/><circle cx="90" cy="54" r="4"/>
+    </g>
+    <g font-family="JetBrains Mono, monospace" font-size="11">
+      <text x="60" y="96" fill="var(--ink)">$ todo next</text>
+      <g fill="var(--ink-soft)">
+        <text x="60" y="124">[x] fix login button</text>
+        <text x="60" y="148">[x] review locking code</text>
+        <text x="60" y="172">[~] write tests</text>
+        <text x="60" y="196">[ ] release v1.0 · after #3</text>
+      </g>
+      <text x="285" y="172" fill="var(--sage)">← agent</text>
+      <text x="285" y="124" fill="var(--rust)">← you</text>
+    </g>
+    <g stroke="var(--rust)" stroke-width="1" opacity="0.7">
+      <line x1="60" y1="120" x2="207" y2="120"/>
+      <line x1="60" y1="144" x2="228" y2="144"/>
+    </g>
+  </svg>`,
   agent: `<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
     <rect width="400" height="280" fill="var(--cream)"/>
     <g fill="none" stroke="var(--rust)" stroke-width="1.2">
