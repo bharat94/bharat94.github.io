@@ -95,7 +95,7 @@ document.querySelectorAll('a, button, .project-card').forEach(el => {
 
 // --- projects ---
 const projects = [
-  { name: 'MatchDay', cat: 'Full-Stack · Live', win: 'Live', desc: 'World Cup prediction game for friends — live scores, a betting board, and a leaderboard that reshuffles at every final whistle.', stack: 'Next.js · TypeScript · Prisma · Postgres', url: 'https://matchday-zeta-ten.vercel.app', viz: 'pitch' },
+  { name: 'MatchDay', cat: 'Full-Stack · Live', win: 'Live', desc: 'World Cup prediction game for friends — live scores, a betting board, and a leaderboard that reshuffles at every final whistle.', stack: 'Next.js · TypeScript · Prisma · Postgres', url: 'https://matchday-6sud.vercel.app', viz: 'pitch' },
   { name: 'CleanHood', cat: 'Social Good', win: 'Winner', desc: 'Crowd-sourced platform for neighborhood reporting and clean-up drives.', stack: 'Android · Node · Mongo · Firebase', url: 'https://devpost.com/software/cleanhood', viz: 'map' },
   { name: 'AuToDo', cat: 'Android', win: 'Winner', desc: 'Smart automation app for intelligent to-do execution and workflow.', stack: 'Android · IBM Watson · Java', url: 'https://devpost.com/software/autodo', viz: 'waves' },
   { name: 'AgentHub', cat: 'AI Agents', desc: 'Privacy-first AI agent orchestration platform with per-agent data isolation.', stack: 'Python · Self-hosted', url: 'https://github.com/bharat94/AgentHub', viz: 'agent' },
